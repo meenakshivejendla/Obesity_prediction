@@ -39,8 +39,8 @@ if __name__ == '__main__':
     df = encode_features(df)
 
     # Features & Target
-    X = df.drop(columns=['BMI'])  # Drop BMI if using it for target
-    y = df['BMI'].apply(lambda bmi: 0 if bmi < 18.5 else 1 if bmi < 25 else 2 if bmi < 30 else 3)  # Categorize BMI
+    X = df.drop(columns=['BMI']) 
+    y = df['BMI'].apply(lambda bmi: 0 if bmi < 18.5 else 1 if bmi < 25 else 2 if bmi < 30 else 3) 
 
     # Scaling & balancing
     X_scaled, scaler = scale_features(X)
